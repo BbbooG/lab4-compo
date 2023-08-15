@@ -13,11 +13,13 @@ const router = useRouter()
 
 <template>
   <div v-if="event">
-    <div id="nav">
-      <router-link :to="{ name: 'event-detail', params: { id } }">Detail </router-link>
-      <router-link :to="{ name: 'event-register', params: { id } }">Register </router-link>
-      <router-link :to="{ name: 'event-edit', params: { id } }">Edit </router-link>
+    <div class="container mx-auto">
+      <div class="flex justify-center space-x-4 mt-5">
+        <router-link :to="{ name: 'event-detail', params: { id } }">Detail </router-link>
+        <router-link :to="{ name: 'event-register', params: { id } }">Register </router-link>
+        <router-link :to="{ name: 'event-edit', params: { id } }">Edit </router-link>
+      </div>
+      <RouterView :event="event"></RouterView>
     </div>
-    <RouterView :event="event"></RouterView>
   </div>
 </template>

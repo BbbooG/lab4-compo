@@ -1,30 +1,21 @@
 <template>
-  <div class="students">
-    <span>Name: {{ student.name }}</span>
-    <p>Surname: {{ student.surname }}</p>
-    <p>GPA: {{ student.gpa }}</p>
+  <div class="mx-auto w-1/2 mt-10 flex flex-col items-center">
+    <div class="p-5 w-64 cursor-pointer border border-gray-600 mb-5">
+      <p>Name: {{ student.name }}</p>
+      <p>Surname: {{ student.surname }}</p>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { studentInfo } from '@/student'
-import { PropTypes } from 'vue'
+import type{ PropType} from 'vue'
 const props = defineProps({
   student: {
-    type: Object as PropTypes<studentInfo>,
+    type: Object as PropType<studentInfo>,
     required: true
   }
 })
 </script>
 
-<style scoped>
-.students {
-  padding: 20px;
-  width: 250px;
-  cursor: pointer;
-  border: 1px solid #b3cff1;
-  margin-bottom: 18px;margin-top: 20px;
-  margin-left: 30%;
-  color: #57f4ff;
-}
-</style>
+<style scoped></style>

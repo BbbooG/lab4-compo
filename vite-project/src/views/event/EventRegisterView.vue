@@ -4,8 +4,11 @@ import type { PropType } from 'vue'
 import { useRouter } from 'vue-router'
 import { useMessageStore } from '@/stores/message'
 const props = defineProps({
-  event: Object as PropType<EventItem>,
+  event:
+  {
+  type:Object as PropType<EventItem>,
   require: true
+  }
 })
 
 const router = useRouter()
@@ -25,6 +28,12 @@ function register() {
 </script>
 
 <template>
-  <p>Registration from here</p>
-  <button @click="register">Regiter Me</button>
+  <div class="mx-auto w-1/2 mt-10 flex flex-col items-center">
+    <div class="p-5 border border-gray-600">
+      <p>Registration from here</p>
+    </div>
+    <button class="bg-yellow-500 text-white font-bold py-2 px-4 rounded mt-5" @click="register">
+      Regiter Me
+    </button>
+  </div>
 </template>
